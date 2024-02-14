@@ -184,3 +184,59 @@
 
 // sortRecursively([2,3,1,4,5,4])
 // console.log(newArr)
+
+
+
+// problem 7 : find the maximum occuring charecter in a 
+
+// function findMaximumCharacter(str){
+//     const counts = {};
+//     let max = 0
+//     let charecter = ''
+
+//     str.split('').forEach(element => {
+//         if(counts[element]){
+//             counts[element] = counts[element] + 1
+//         }else{
+//             counts[element] = 1
+//         }
+//     });
+
+//     for (const key in counts) {
+//         if(counts[key] > max){
+//             max = counts[key]
+//             charecter = key
+//            }
+//     }
+
+//     return charecter
+// }
+
+// console.log(findMaximumCharacter('hello worldddd'))
+
+
+// Longest Substring Without Repeating Characters 
+
+function findLongestSubstring(str){
+    let start = 0;
+    let end = 0 ;
+    let maxCharecter = 0;
+
+    const uniqueSet = new Set();
+
+    while(end < str.length){
+        if(!uniqueSet.has(str[end])){
+            uniqueSet.add(str[end])
+            end++
+            maxCharecter = Math.max(maxCharecter,uniqueSet.size)
+        }else{
+            uniqueSet.delete(str[start])
+            start++
+        }
+    }
+
+    console.log(end - start)
+    return maxCharecter;
+}
+
+console.log(findLongestSubstring('abcabcbbe'))
