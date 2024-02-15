@@ -217,26 +217,25 @@
 
 // Longest Substring Without Repeating Characters 
 
-function findLongestSubstring(str){
-    let start = 0;
-    let end = 0 ;
-    let maxCharecter = 0;
+// function findLongestSubstring(str){
+//     let start = 0;
+//     let end = 0 ;
+//     let maxCharecter = 0;
 
-    const uniqueSet = new Set();
+//     const uniqueSet = new Set();
 
-    while(end < str.length){
-        if(!uniqueSet.has(str[end])){
-            uniqueSet.add(str[end])
-            end++
-            maxCharecter = Math.max(maxCharecter,uniqueSet.size)
-        }else{
-            uniqueSet.delete(str[start])
-            start++
-        }
-    }
+//     while(end < str.length){
+//         if(!uniqueSet.has(str[end])){
+//             uniqueSet.add(str[end]) 
+//             end++
+//             maxCharecter = Math.max(maxCharecter,uniqueSet.size)
+//         }else{
+//             uniqueSet.delete(str[start])
+//             start++
+//         }
+//     }
 
-    console.log(end - start)
-    return maxCharecter;
-}
+//     return maxCharecter;
+// }
 
-console.log(findLongestSubstring('abcabcbbe'))
+// console.log(findLongestSubstring('abcabcbbe'))
